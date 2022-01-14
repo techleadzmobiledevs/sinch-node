@@ -12,13 +12,13 @@ var twilio = require('twilio');
 const app = express();
 
 
-app.get('/', (req, res) => { 
+app.post('/callback', (req, res) => { 
   console.log('req body receive fromt the sinch: ', req.body);
   console.log('req query recieve from sinch: ', req.query);
   res.send('Hello world.');
 });
 
-app.post('/sms',jsonParser, (req, res) => {
+app.post('/sms', jsonParser, (req, res) => {
   const twiml = new MessagingResponse();
   console.log('body ------------------------------------------', req.body);
   twiml.message('The Robots are coming! Head for the hills!');
