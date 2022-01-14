@@ -11,6 +11,11 @@ var urlencodedParser = bodyParser.urlencoded({ extended: false })
 var twilio = require('twilio');
 const app = express();
 
+app.get('/', jsonParser, (req, res) => { 
+  console.log('req body receive from: ', req.body);
+  console.log('req query recieve from: ', req.query);
+  res.send('Home URL of API. Hello world...');
+});
 
 app.post('/callback', jsonParser, (req, res) => { 
   console.log('req body receive fromt the sinch: ', req.body);
