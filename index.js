@@ -12,7 +12,7 @@ var twilio = require('twilio');
 const app = express();
 
 
-app.post('/callback', (req, res) => { 
+app.post('/callback', jsonParser, (req, res) => { 
   console.log('req body receive fromt the sinch: ', req.body);
   console.log('req query recieve from sinch: ', req.query);
   res.send('Hello world...');
