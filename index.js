@@ -15,7 +15,7 @@ const app = express();
 app.post('/callback', (req, res) => { 
   console.log('req body receive fromt the sinch: ', req.body);
   console.log('req query recieve from sinch: ', req.query);
-  res.send('Hello world.');
+  res.send('Hello world...');
 });
 
 app.post('/sms', jsonParser, (req, res) => {
