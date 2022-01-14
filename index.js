@@ -13,7 +13,8 @@ const app = express();
 
 
 app.get('/', (req, res) => { 
-  console.log('req receive fromt he sinch: ', req);
+  console.log('req body receive fromt the sinch: ', req.body);
+  console.log('req query recieve from sinch: ', req.query);
   res.send('Ok');
 });
 
