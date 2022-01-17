@@ -31,7 +31,7 @@ app.post('/callback', jsonParser, (req, res) => {
   };
   console.log('req body receive fromt the sinch: ', req.body);
   console.log('req query recieve from sinch: ', req.query);
-  res.send('Hello world...');
+  res.send('Hello world return.');
 });
 
 app.post('/sms', jsonParser, (req, res) => {
