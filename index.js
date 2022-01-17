@@ -18,6 +18,17 @@ app.get('/', jsonParser, (req, res) => {
 });
 
 app.post('/callback', jsonParser, (req, res) => { 
+  if(req.body.type == "firmwareList") {
+    console.log("\nNew Firmware Available:");
+  } else if(req.body.type == "upgradeScheduled") {
+    console.log("\nUpgrade Scheduled");
+  } else if(req.body.type == "upgradeProgress") {
+    console.log("\nUpgrade Started");
+  } else if(req.body.type == "upgradeFinished") {
+    console.log("\nUpgrade Finished");
+  } else {
+    console.log("\nUnrecognized callback message");
+  };
   console.log('req body receive fromt the sinch: ', req.body);
   console.log('req query recieve from sinch: ', req.query);
   res.send('Hello world...');
